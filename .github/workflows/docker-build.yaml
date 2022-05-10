@@ -45,7 +45,6 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: |
             ghcr.io/kncyber/welcome-bot:${{ github.sha }}
-            ghcr.io/kncyber/welcome-bot:${{ steps.docker_build.outputs.digest }}
             ghcr.io/kncyber/welcome-bot:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
